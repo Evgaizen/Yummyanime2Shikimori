@@ -1,0 +1,16 @@
+{
+  "name": "Yummyanime2Shikimori",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^9.0.0",
+    "ts-node": "^10.5.0"
+  }
+}
