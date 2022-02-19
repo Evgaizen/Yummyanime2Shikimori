@@ -38,24 +38,12 @@ interface ShikimoriItem {
   text: "";
 }
 
-const mapStatus = (status: YummyanimeStatus): ShikimoriStatus => {
-  switch(status) {
-    case YummyanimeStatus.COMPLETED:
-        return ShikimoriStatus.COMPLETED;
-
-    case YummyanimeStatus.PLANNED:
-        return ShikimoriStatus.PLANNED;
-
-    case YummyanimeStatus.WATCHING:
-        return ShikimoriStatus.WATCHING;
-
-    case YummyanimeStatus.DROPPED:
-        return ShikimoriStatus.DROPPED;
-
-    default:
-        throw new Error('Not supported status');
-  }
-} 
+const mapStatus = {
+  [YummyanimeStatus.COMPLETED]: ShikimoriStatus.COMPLETED,
+  [YummyanimeStatus.PLANNED]: ShikimoriStatus.PLANNED,
+  [YummyanimeStatus.WATCHING]: ShikimoriStatus.WATCHING,
+  [YummyanimeStatus.DROPPED]: ShikimoriStatus.DROPPED,
+}
 
 const mapItem = (item: YummyanimeItem): ShikimoriItem | null => {
   if (item.list_id === YummyanimeStatus.FAVORITE) {
@@ -67,7 +55,7 @@ const mapItem = (item: YummyanimeItem): ShikimoriItem | null => {
     target_id: item.target_id,
     target_type: 'Anime',
     score: item.score || 0,
-    status: mapStatus(item.list_id),
+    status: mapStatus[item.list_id],
     rewatches: 0,
     episodes: 0,
     text: '',

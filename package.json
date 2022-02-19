@@ -7,7 +7,7 @@
     "start": "ts-node index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nikita Ivanov <49843824+Evgaizen@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
     "commander": "^9.0.0",
